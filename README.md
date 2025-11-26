@@ -19,3 +19,9 @@ running tests with coverage:
 running tests with type coverage:
 
 ./vendor/bin/pest --type-coverage
+
+./vendor/bin/pest --type-coverage --min=85
+
+running architectural tests:
+
+./vendor/bin/pest --arch
