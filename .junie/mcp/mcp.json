@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "wsl.exe",
+            "args": [
+                "/home/attila/.config/herd-lite/bin/php",
+                "/home/attila/projects/laravel-tweaks/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
