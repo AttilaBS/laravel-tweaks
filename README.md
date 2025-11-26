@@ -13,3 +13,5 @@ xdebug.cache_dir=/tmp
 running tests with coverage: 
 
 ./vendor/bin/pest --coverage
+
+./vendor/bin/pest --coverage --min=40
