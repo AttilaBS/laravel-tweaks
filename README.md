@@ -15,3 +15,7 @@ running tests with coverage:
 ./vendor/bin/pest --coverage
 
 ./vendor/bin/pest --coverage --min=40
+
+running tests with type coverage:
+
+./vendor/bin/pest --type-coverage
