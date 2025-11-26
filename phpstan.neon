@@ -1,0 +1,48 @@
+includes:
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - vendor/larastan/larastan/extension.neon
+  - vendor/nesbot/carbon/extension.neon
+
+parameters:
+  # Level 10 is the highest level
+  level: 5
+  phpVersion: 80400
+
+  paths:
+    - app/
+    - routes/
+    - database/
+
+  excludePaths:
+    - vendor
+    - storage
+    - bootstrap/cache
+    - node_modules
+    - resources/views
+    - public
+    - tests
+    - config
+
+  # --------------------------------------------------------------------------
+  # Strict core PHPStan behavior (ONLY keys still valid in PHPStan 2.x)
+  # --------------------------------------------------------------------------
+
+  checkMissingTypehints: true
+  checkMissingCallableSignature: true
+  checkExplicitMixed: true   # No mixed allowed
+  inferPrivatePropertyTypeFromConstructor: true
+  checkDynamicProperties: true
+  treatPhpDocTypesAsCertain: false
+
+  universalObjectCratesClasses: []
+
+  ignoreErrors:
+    - '#Call to an undefined method Illuminate\\Http\\Request::validate#'
+    - '#Call to an undefined method .*::macro#'
+    - '#Function view\(|Function redirect\(|Function response\(#'
+
+# Valid in PHPStan 2.x (rules root-level)
+rules:
+  - PHPStan\Rules\Functions\MissingFunctionReturnTypehintRule
+  - PHPStan\Rules\Properties\MissingPropertyTypehintRule
