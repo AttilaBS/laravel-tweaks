@@ -26,12 +26,9 @@ export default function Dashboard({ stats }: DashboardProps) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
-
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-
                 {/* Same grid as original starter */}
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-
                     {cards.map((card, index) => (
                         <DashboardCard key={index} loading={loading}>
                             {!loading && (
@@ -42,7 +39,6 @@ export default function Dashboard({ stats }: DashboardProps) {
                             )}
                         </DashboardCard>
                     ))}
-
                 </div>
 
                 {/* Full-width section */}
@@ -54,7 +50,6 @@ export default function Dashboard({ stats }: DashboardProps) {
                         </div>
                     )}
                 </DashboardCard>
-
             </div>
         </AppLayout>
     );

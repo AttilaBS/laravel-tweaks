@@ -17,7 +17,9 @@ final class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::firstOrCreate(
+        $this->run(QuoteSeeder::class);
+
+        app(User::class)->firstOrCreate(
             ['email' => 'test@example.com'],
             [
                 'name' => 'Test User',
